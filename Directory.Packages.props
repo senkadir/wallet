@@ -1,0 +1,36 @@
+<Project>
+    <ItemGroup>
+        <PackageVersion Include="FluentEmail.Core" Version="3.0.0" />
+        <PackageVersion Include="FluentEmail.Razor" Version="3.0.0" />
+        <PackageVersion Include="FluentEmail.SendGrid" Version="3.0.0" />
+        <PackageVersion Include="FluentEmail.Smtp" Version="3.0.0" />
+        <PackageVersion Include="Scrutor" Version="3.3.0" />
+        <PackageVersion Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.13" />
+        <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+        <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
+        <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="5.0.13" />
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.13" />
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.13" />
+        <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.13" />
+        <PackageVersion Include="MassTransit" Version="7.3.0" />
+        <PackageVersion Include="MassTransit.Extensions.DependencyInjection" Version="7.3.0" />
+        <PackageVersion Include="Swashbuckle.AspNetCore.Swagger" Version="6.2.3" />
+        <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.2.3" />
+        <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.2.3" />
+        <PackageVersion Include="Microsoft.AspNetCore.Authentication.Google" Version="5.0.13" />
+        <PackageVersion Include="SendGrid" Version="9.25.1" />
+        <PackageVersion Include="CsvHelper" Version="27.2.1" />
+        
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.13">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageVersion>
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.13">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageVersion>
+        
+        <PackageVersion Include="AutoMapper" Version="10.1.1" />
+        <PackageVersion Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    </ItemGroup>
+</Project>
