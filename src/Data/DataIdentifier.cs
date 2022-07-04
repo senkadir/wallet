@@ -1,6 +1,6 @@
 ﻿namespace Data
 {
-    public class Identifier
+    public class DataIdentifier
     {
     }
 }

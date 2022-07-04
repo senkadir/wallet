@@ -5,7 +5,7 @@ namespace Api.Infrastructure
 {
     public static class Extensions
     {
-        public static IServiceCollection AddContext(this IServiceCollection services)
+        internal static IServiceCollection AddContext(this IServiceCollection services)
         {
             using (var serviceProvider = services.BuildServiceProvider())
             {
@@ -13,14 +13,36 @@ namespace Api.Infrastructure
 
                 services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), x =>
                 {
-                    x.MigrationsAssembly(typeof(Identifier).Namespace);
-                    x.MigrationsHistoryTable("EFMigrationsHistory", "public");
+                    x.MigrationsAssembly(typeof(DataIdentifier).Namespace);
+                    x.MigrationsHistoryTable("EFMigrationsHistory");
                 }));
             }
 
             return services;
         }
 
-        
+        internal static void InitializeDatabase(this IApplicationBuilder app)
+        {
+            using var serviceScope = app.ApplicationServices.CreateScope();
+
+            var environment = serviceScope.ServiceProvider.GetService<IHostEnvironment>();
+
+            if (environment == null)
+            {
+                return;
+            }
+
+            if (environment.EnvironmentName == "Docker")
+            {
+                var db = serviceScope.ServiceProvider.GetService<ApplicationContext>();
+
+                if (db == null)
+                {
+                    return;
+                }
+
+                db.Database.Migrate();
+            }
+        }
     }
 }

@@ -2,37 +2,36 @@ version: "3.5"
 
 services:
 
-##46002 - sql-server-db
-  sql-server-db:
-    container_name: sql-server-db
+##47000 - db
+  db:
+    container_name: db
     image: mcr.microsoft.com/mssql/server:2019-latest
     ports:
-      - "46002:1433"
+      - "47000:1433"
     environment:
       SA_PASSWORD: "Password123"
       ACCEPT_EULA: "Y"
     networks:
-      - bukalemun
+      - wallet
 
-##46101 - ui
+##47101 - api
   ui:
-    image: bukalemun/ui
+    image: wallet/api
     build:
       context: ./
       dockerfile: ./Dockerfile
-    container_name: ui
+    container_name: api
     ports:
-      - '46101:5000'
+      - '47101:5000'
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
-      - TZ=Turkey
     networks:
-      - bukalemun
+      - wallet
     depends_on:
-      - sql-server-db
+      - db
     restart: 
       on-failure
 
 networks:
-  bukalemun:
-    name: bukalemun-network
+  wallet:
+    name: wallet-network

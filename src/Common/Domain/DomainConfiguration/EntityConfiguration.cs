@@ -9,15 +9,15 @@ namespace Wallet.Common.Domain.DomainConfiguration
         {
             builder.Property(x => x.Id)
                    .HasColumnName("id")
-                   .HasColumnType("uuid");
+                   .HasColumnType("UNIQUEIDENTIFIER");
 
             builder.Property(x => x.CreatedAt)
                    .HasColumnName("create_at")
-                   .HasColumnType("timestamp");
+                   .HasColumnType("DateTime");
 
             builder.Property(x => x.ModifiedAt)
                    .HasColumnName("modified_at")
-                   .HasColumnType("timestamp");
+                   .HasColumnType("DateTime");
 
         }
     }

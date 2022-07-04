@@ -15,6 +15,9 @@ namespace Data.DomainObjectConfigurations
 
             builder.Property(x => x.Description)
                    .HasMaxLength(250);
+
+            builder.Property(x => x.Amount)
+                   .HasColumnType("decimal(18,2)");
         }
     }
 }

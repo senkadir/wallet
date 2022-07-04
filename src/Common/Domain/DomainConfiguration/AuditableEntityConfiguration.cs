@@ -11,11 +11,11 @@ namespace Wallet.Common.Domain.DomainConfiguration
 
             builder.Property(x => x.CreatedBy)
                 .HasColumnName("created_by")
-                .HasColumnType("uuid");
+                .HasColumnType("UNIQUEIDENTIFIER");
 
             builder.Property(x => x.ModifiedBy)
                 .HasColumnName("modified_by")
-                .HasColumnType("uuid");
+                .HasColumnType("UNIQUEIDENTIFIER");
         }
     }
 }

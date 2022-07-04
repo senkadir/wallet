@@ -9,14 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "src\Common\Common
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain.csproj", "{72364678-95A8-4268-94D9-99053DA769A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "src\Api\Api.csproj", "{9A70F078-FC39-4188-96CF-087D95683B9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "src\Api\Api.csproj", "{9A70F078-FC39-4188-96CF-087D95683B9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "src\Core\Core.csproj", "{0FE0BA97-1B94-4597-AA41-C42660857AE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "src\Core\Core.csproj", "{0FE0BA97-1B94-4597-AA41-C42660857AE6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2270CDA8-FE14-452C-9CBA-0E6DB72EE0F1}"
 	ProjectSection(SolutionItems) = preProject
-		infrastructure\docker-compose.yml = infrastructure\docker-compose.yml
-		infrastructure\Dockerfile = infrastructure\Dockerfile
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
 Global
