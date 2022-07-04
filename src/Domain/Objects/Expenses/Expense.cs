@@ -9,5 +9,7 @@ namespace Domain.Objects
         public string Description { get; set; }
 
         public Period Period { get; set; }
+
+        public ExpenseCategory Category { get; set; }
     }
 }

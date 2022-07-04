@@ -2,7 +2,7 @@
 
 namespace Domain.Objects
 {
-    public class Category : AuditableEntity
+    public class ExpenseCategory : AuditableEntity
     {
         public string Name { get; set; }
 
