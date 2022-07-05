@@ -13,5 +13,12 @@ namespace Api.Controllers
         {
             _expenseService = expenseService;
         }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateExpense()
+        {
+
+            return Ok();
+        }
     }
 }
