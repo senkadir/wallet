@@ -26,22 +26,22 @@ namespace Data.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("UNIQUEIDENTIFIER")
-                        .HasColumnName("id");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
 
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid>("CategoryId")
-                        .HasColumnType("UNIQUEIDENTIFIER");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("DateTime")
-                        .HasColumnName("create_at");
+                        .HasColumnType("datetime")
+                        .HasColumnName("CreatedAt");
 
                     b.Property<Guid>("CreatedBy")
-                        .HasColumnType("UNIQUEIDENTIFIER")
-                        .HasColumnName("created_by");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatedBy");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -49,15 +49,15 @@ namespace Data.Migrations
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<DateTime>("ModifiedAt")
-                        .HasColumnType("DateTime")
-                        .HasColumnName("modified_at");
+                        .HasColumnType("datetime")
+                        .HasColumnName("ModifiedAt");
 
                     b.Property<Guid>("ModifiedBy")
-                        .HasColumnType("UNIQUEIDENTIFIER")
-                        .HasColumnName("modified_by");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ModifiedBy");
 
                     b.Property<Guid>("PeriodId")
-                        .HasColumnType("UNIQUEIDENTIFIER");
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -72,16 +72,16 @@ namespace Data.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("UNIQUEIDENTIFIER")
-                        .HasColumnName("id");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("DateTime")
-                        .HasColumnName("create_at");
+                        .HasColumnType("datetime")
+                        .HasColumnName("CreatedAt");
 
                     b.Property<Guid>("CreatedBy")
-                        .HasColumnType("UNIQUEIDENTIFIER")
-                        .HasColumnName("created_by");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatedBy");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -92,12 +92,12 @@ namespace Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("ModifiedAt")
-                        .HasColumnType("DateTime")
-                        .HasColumnName("modified_at");
+                        .HasColumnType("datetime")
+                        .HasColumnName("ModifiedAt");
 
                     b.Property<Guid>("ModifiedBy")
-                        .HasColumnType("UNIQUEIDENTIFIER")
-                        .HasColumnName("modified_by");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ModifiedBy");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -113,27 +113,27 @@ namespace Data.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("UNIQUEIDENTIFIER")
-                        .HasColumnName("id");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("DateTime")
-                        .HasColumnName("create_at");
+                        .HasColumnType("datetime")
+                        .HasColumnName("CreatedAt");
 
                     b.Property<Guid>("CreatedBy")
-                        .HasColumnType("UNIQUEIDENTIFIER")
-                        .HasColumnName("created_by");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatedBy");
 
                     b.Property<DateTime>("From")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("ModifiedAt")
-                        .HasColumnType("DateTime")
-                        .HasColumnName("modified_at");
+                        .HasColumnType("datetime")
+                        .HasColumnName("ModifiedAt");
 
                     b.Property<Guid>("ModifiedBy")
-                        .HasColumnType("UNIQUEIDENTIFIER")
-                        .HasColumnName("modified_by");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("ModifiedBy");
 
                     b.Property<string>("Name")
                         .IsRequired()

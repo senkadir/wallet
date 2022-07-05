@@ -13,8 +13,5 @@ namespace Api.Controllers
         {
             _expenseService = expenseService;
         }
-
-        [HttpPost]
-
     }
 }

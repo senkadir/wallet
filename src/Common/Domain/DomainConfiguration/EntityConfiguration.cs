@@ -8,16 +8,16 @@ namespace Wallet.Common.Domain.DomainConfiguration
         public virtual void Configure(EntityTypeBuilder<TEntity> builder)
         {
             builder.Property(x => x.Id)
-                   .HasColumnName("id")
-                   .HasColumnType("UNIQUEIDENTIFIER");
+                   .HasColumnName("Id")
+                   .HasColumnType("uniqueidentifier");
 
             builder.Property(x => x.CreatedAt)
-                   .HasColumnName("create_at")
-                   .HasColumnType("DateTime");
+                   .HasColumnName("CreatedAt")
+                   .HasColumnType("datetime");
 
             builder.Property(x => x.ModifiedAt)
-                   .HasColumnName("modified_at")
-                   .HasColumnType("DateTime");
+                   .HasColumnName("ModifiedAt")
+                   .HasColumnType("datetime");
 
         }
     }
