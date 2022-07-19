@@ -1,6 +1,8 @@
 ﻿using Data;
 using Domain.Commands;
+using Domain.Models;
 using Domain.Objects;
+using Microsoft.EntityFrameworkCore;
 
 namespace Core.Services
 {
@@ -26,6 +28,19 @@ namespace Core.Services
             _ = _context.Periods!.Add(period);
 
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<List<PeriodViewModel>> GetAsync()
+        {
+            return await _context.Periods
+                                 .Select(x => new PeriodViewModel
+                                 {
+                                     Id = x.Id,
+                                     Name = x.Name,
+                                     From = x.From,
+                                     To = x.To
+                                 })
+                                 .ToListAsync();
         }
     }
 }
