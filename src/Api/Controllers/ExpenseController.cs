@@ -1,10 +1,11 @@
 ﻿using Core.Services;
+using Domain.Commands;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("expense")]
+    [Route("expenses")]
     public class ExpenseController : ControllerBase
     {
         private readonly IExpenseService _expenseService;
@@ -15,8 +16,9 @@ namespace Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateExpense()
+        public async Task<IActionResult> CreateExpense([FromBody] CreateExpenseCommand command)
         {
+            await _expenseService.CreateAsync(command);
 
             return Ok();
         }

@@ -27,7 +27,7 @@ namespace Core.Services
 
             _ = _context.Periods!.Add(period);
 
-            await _context.SaveChangesAsync();
+            _ = await _context.SaveChangesAsync();
         }
 
         public async Task<List<PeriodViewModel>> GetAsync()

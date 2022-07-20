@@ -1,5 +1,6 @@
 ﻿using Domain.Objects;
 using Microsoft.EntityFrameworkCore;
+using Wallet.Common.Domain;
 
 namespace Data
 {
@@ -21,6 +22,28 @@ namespace Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(DataIdentifier).Assembly);
+        }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            ChangeTracker.Entries()
+                         .Where(x => x.State == EntityState.Added && x.Entity is Entity)
+                         .ToList()
+                         .ForEach(added =>
+                         {
+                             added.Property("CreatedAt").CurrentValue = DateTime.Now;
+                             added.Property("ModifiedAt").CurrentValue = DateTime.Now;
+                         });
+
+            ChangeTracker.Entries()
+                         .Where(x => x.State == EntityState.Modified && x.Entity is Entity)
+                         .ToList()
+                         .ForEach(added =>
+                         {
+                             added.Property("ModifiedAt").CurrentValue = DateTime.Now;
+                         });
+
+            return base.SaveChangesAsync(cancellationToken);
         }
     }
 }

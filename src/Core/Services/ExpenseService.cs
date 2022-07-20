@@ -1,5 +1,5 @@
 ﻿using Data;
-using Domain.Commands.Expense;
+using Domain.Commands;
 using Domain.Objects;
 
 namespace Core.Services
@@ -12,7 +12,8 @@ namespace Core.Services
         {
             _context = context;
         }
-        public async Task CreateExpenseAsync(CreateExpenseCommand command)
+
+        public async Task CreateAsync(CreateExpenseCommand command)
         {
             Expense expense = new()
             {
