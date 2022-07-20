@@ -1,6 +1,7 @@
 using Api.Infrastructure;
 using Common.Api;
 using Core;
+using Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddContext();
 builder.Services.AddDomainServices(typeof(CoreIdentifier));
+builder.Services.AddAutoMapper(typeof(DomainIdentifierType));
 
 var app = builder.Build();
 

@@ -1,4 +1,6 @@
-﻿using Data;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Data;
 using Domain.Commands;
 using Domain.Models;
 using Domain.Objects;
@@ -9,10 +11,13 @@ namespace Core.Services
     public class PeriodService : IPeriodService
     {
         private readonly ApplicationContext _context;
+        private readonly IMapper _mapper;
 
-        public PeriodService(ApplicationContext context)
+        public PeriodService(ApplicationContext context,
+                             IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public async Task CreateAsync(CreatePeriodCommand command)
@@ -21,6 +26,7 @@ namespace Core.Services
             {
                 Id = Guid.NewGuid(),
                 Name = command.Name,
+                Code = command.Name.Replace(" ", "-").ToLower(),
                 From = command.From,
                 To = command.To
             };
@@ -33,13 +39,8 @@ namespace Core.Services
         public async Task<List<PeriodViewModel>> GetAsync()
         {
             return await _context.Periods
-                                 .Select(x => new PeriodViewModel
-                                 {
-                                     Id = x.Id,
-                                     Name = x.Name,
-                                     From = x.From,
-                                     To = x.To
-                                 })
+                                 .AsNoTracking()
+                                 .ProjectTo<PeriodViewModel>(_mapper.ConfigurationProvider)
                                  .ToListAsync();
         }
     }

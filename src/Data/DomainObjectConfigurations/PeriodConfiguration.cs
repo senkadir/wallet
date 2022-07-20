@@ -15,6 +15,9 @@ namespace Data.DomainObjectConfigurations
 
             builder.Property(x => x.Name)
                    .HasMaxLength(100);
+
+            builder.Property(x => x.Code)
+                   .HasMaxLength(250);
         }
     }
 }
