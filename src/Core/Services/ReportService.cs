@@ -1,5 +1,6 @@
 ﻿using Data;
 using Domain.Queries.Reports;
+using Microsoft.EntityFrameworkCore;
 
 namespace Core.Services
 {
@@ -14,6 +15,11 @@ namespace Core.Services
 
         public async Task GetByPeriod(ReportByPeriodQuery query)
         {
+            var result = await _applicationContext.Expenses
+                                            .AsNoTracking()
+                                            .Where(x => x.Period.Code == query.PeriodCode)
+                                            .SumAsync(x => x.Amount);
+
         }
     }
 }
